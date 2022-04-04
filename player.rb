@@ -3,6 +3,6 @@ class Player
     @id = id
     @lives = 3
   end
-  attr_accessor :lives
+  attr_accessor :lives, :id
 end
   
