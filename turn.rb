@@ -5,6 +5,13 @@ class Turn
     @question = Question.new
   end
 
+  def checkWin()
+    if(@player.lives === 0)
+    return true
+    end
+    return false
+  end
+
   def main 
     puts "Player #{@player.id}'s turn:"
     puts @question.string
@@ -12,8 +19,9 @@ class Turn
     if guess != @question.answer
       @player.lives = @player.lives - 1
       puts "Wrong you lose a life, lives remaining = #{@player.lives}"
-      end
+      puts "Answer was #{@question.answer}"
     else 
       puts "Correct"
+    end
   end
 end
